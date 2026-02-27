@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <title>Slide Game</title>
+  <title>Bạn có phải là Mieon không?</title>
 
   <style>
     html, body {
@@ -27,7 +27,6 @@
 
   <iframe
      src="https://docs.google.com/presentation/d/e/2PACX-1vQaFOqWgY3t6E0DJi1-78xv5hWP70O394HmFUqr6pyAuOOaT5lm8tlOYyoBS9QeLFH4jeKRSVXZ5dbw/embed?start=false&loop=false&delayms=999999999"
-  sandbox="allow-scripts allow-same-origin allow-presentation allow-top-navigation-by-user-activation"
   allowfullscreen>
   </iframe>
 
@@ -58,11 +57,16 @@
     document.addEventListener("touchmove", e => {
       e.preventDefault();
     }, { passive: false });
+     /*CHỐNG MỞ TAB TỪ WRAPPER*/
+  window.open = function () {
+    return null;
+  };
   </script>
 
 </body>
 
 </html>
+
 
 
 
