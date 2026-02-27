@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Slide Game</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: black;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+      border: none;
+      touch-action: manipulation;
+    }
+  </style>
+</head>
+
+<body>
+
+  <iframe
+    src="https://docs.google.com/presentation/d/e/2PACX-1vQaFOqWgY3t6E0DJi1-78xv5hWP70O394HmFUqr6pyAuOOaT5lm8tlOYyoBS9QeLFH4jeKRSVXZ5dbw/embed?start=false&loop=false&delayms=999999999"
+    allowfullscreen>
+  </iframe>
+
+  <script>
+    /*Chặn phím*/
+    document.addEventListener("keydown", e => {
+      const blocked = [
+        "ArrowLeft","ArrowRight",
+        "ArrowUp","ArrowDown",
+        "PageUp","PageDown",
+        " ","Enter"
+      ];
+      if (blocked.includes(e.key)) e.preventDefault();
+    });
+
+    /*Chặn click ngoài nút*/
+    document.addEventListener("click", e => {
+      if (!e.target.closest("a, button")) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
+    /*Chặn chuột phải*/
+    document.addEventListener("contextmenu", e => e.preventDefault());
+
+    /*Chặn swipe*/
+    document.addEventListener("touchmove", e => {
+      e.preventDefault();
+    }, { passive: false });
+  </script>
+
+</body>
+</html>
